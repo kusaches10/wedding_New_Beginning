@@ -388,6 +388,12 @@ footer {
 @media (max-width: 768px) {
     .poster {
         padding: 40px 20px;
+    .poster.countdown {
+        border: none;
+        padding: 0;
+        text-align: center;
+        background: transparent;
+}
     }
 }
 #countdown-table {
@@ -400,6 +406,7 @@ footer {
     text-align: center;
     background: transparent;
 }
+
 
 
 
