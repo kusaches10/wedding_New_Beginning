@@ -5,7 +5,7 @@ html, body {
     background-color: #FFF8DC;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    font-size: 18px ;
+    font-size: 20px ;
 }
 
 /* ===== ЦВЕТ ТЕКСТА ===== */
@@ -400,6 +400,7 @@ footer {
         outline: 2px solid red;
     }
 }
+
 
 
 
