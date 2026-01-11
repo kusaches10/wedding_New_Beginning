@@ -389,6 +389,45 @@ footer {
         transform-origin: center;
     }
 }
+@media (max-width: 768px) {
+
+    /* УБИРАЕМ ОПТИЧЕСКИЙ СДВИГ */
+    #rsvp h2 {
+        transform: none;
+        text-align: center;
+    }
+
+    /* ЖЁСТКО ЦЕНТРИРУЕМ ТАЙМЕР */
+    #countdown-table {
+        margin-left: auto;
+        margin-right: auto;
+        table-layout: fixed;
+    }
+
+    #countdown-table td {
+        text-align: center;
+        padding: 0 3px;
+    }
+}
+ @media (max-width: 768px) {
+
+    #countdown-table .days {
+        width: 3.6ch;
+    }
+
+    #countdown-table td:not(.days):not(.sep) {
+        width: 2.6ch;
+    }
+
+    #countdown-table .sep {
+        width: 1ch;
+    }
+}
+@media (max-width: 768px) {
+    #countdown-table {
+        outline: 2px solid red;
+    }
+}
 
 
 
