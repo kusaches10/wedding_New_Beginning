@@ -5,7 +5,6 @@ html, body {
     background-color: #FFF8DC;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    font-size: 18px ;
 }
 
 /* ===== ЦВЕТ ТЕКСТА ===== */
@@ -395,7 +394,13 @@ footer {
         padding: 0 3px;
     }
 }
+@media (min-width: 1024px) {
 
+    body {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
 
 
 
