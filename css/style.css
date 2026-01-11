@@ -378,6 +378,17 @@ footer {
         padding: 40px 20px;
     }
 }
+.poster.countdown {
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: center;
+}
+
+#countdown-table {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 
