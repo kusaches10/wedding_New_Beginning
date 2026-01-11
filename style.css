@@ -1,0 +1,336 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #FFF8DC;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ===== ЦВЕТ ТЕКСТА ===== */
+body, p, li, h2, h3, a { color: #800000; }
+
+/* ===== ПЕРВЫЙ ЭКРАН ===== */
+.premiere {
+    height: 100vh;
+    background: url('../images/back.jpg') no-repeat center / cover ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.premiere::before {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:1;
+}
+.premiere h1, .premiere h2 {
+    position:relative;
+    z-index:2;
+    color:#FFD700;
+    opacity:0;
+    text-shadow:2px 2px 6px rgba(0,0,0,.5);
+}
+.premiere h1 { font-size:4em; animation:fade 2s .6s forwards; }
+.premiere h2 { font-size:2em; margin-top:20px; animation:fade 2s 1.2s forwards; }
+@keyframes fade {
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1;}
+}
+
+/* ===== ТЕАТРАЛЬНЫЕ ЗАНАВЕСЫ ===== */
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 3;
+    overflow: hidden;
+}
+
+/* ткань */
+.curtain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        /* мягкая глубина */
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.35),
+            rgba(255,255,255,0.12),
+            rgba(0,0,0,0.45)
+        ),
+
+        /* складки ткани */
+        repeating-linear-gradient(
+            to right,
+            #7a0000 0px,
+            #7a0000 10px,
+            #8b0000 18px,
+            #6f0000 26px,
+            #8b0000 34px
+        );
+
+    filter:
+        contrast(1.08)
+        saturate(1.1);
+
+    animation: curtainBreath 3.2s ease-in-out infinite;
+}
+/* левый занавес */
+.curtain.left {
+    left: 0;
+    animation: openCurtainLeft 3.8s cubic-bezier(.6,0,.4,1) forwards;
+}
+
+/* правый занавес */
+.curtain.right {
+    right: 0;
+    animation: openCurtainRight 3.8s cubic-bezier(.6,0,.4,1) forwards;
+}
+
+/* ===== АНИМАЦИЯ "ДЫХАНИЯ" ТКАНИ ===== */
+@keyframes curtainBreath {
+    0%   { filter: brightness(0.97); }
+    40%  { filter: brightness(1.08); }
+    70%  { filter: brightness(1.03); }
+    100% { filter: brightness(0.97); }
+}
+/* ===== АНИМАЦИИ ОТКРЫТИЯ ===== */
+@keyframes openCurtainLeft {
+    to { transform: translateX(-100%); }
+}
+
+@keyframes openCurtainRight {
+    to { transform: translateX(100%); }
+}
+/* ===== ОБЁРТКА ===== */
+.wrapper {
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 100px;
+}
+/* ===== ЦИТАТЫ ===== */
+.quote {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.4em;
+    color: #800000;
+    opacity: 0.9;
+}
+
+.quote span {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-style: normal;
+    opacity: 0.7;
+}
+/* ===== Анимация появления цитат ===== */
+.quote {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.quote.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== АФИШИ ===== */
+.poster {
+    margin:60px auto;
+    padding:60px 40px;
+    max-width:900px;
+    background:#FFF8DC;
+    border:3px solid #800000;
+    border-radius:30px;
+    text-align:center;
+}
+.poster h2 { font-size:2.2em; margin-bottom:25px; }
+
+/* ===== НАВИГАЦИЯ ===== */
+nav {
+    text-align:center;
+    border-top:1px solid rgba(128,0,0,.3);
+    border-bottom:1px solid rgba(128,0,0,.3);
+}
+nav a {
+    margin:0 20px;
+    text-decoration:none;
+    font-size:1.2em;
+    padding:15px 0;
+    display:inline-block;
+}
+
+/* ===== О НАС ===== */
+.about-row {
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+.about-row.reverse { flex-direction:row-reverse; }
+.about-image { flex:1 1 40%; }
+.about-image img { width:80%; border-radius:20px; }
+.about-text { flex:1 1 50%; }
+
+/* ===== ВМЕСТЕ ===== */
+about-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1 1 40%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.about-text {
+    flex: 1 1 50%;
+}
+
+
+/* ===== ДРЕСС-КОД ===== */
+.dresscode-colors {
+    display:flex;
+    gap:35px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+.color-circle {
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:2px solid #800000;
+    margin:0 auto 12px;
+}
+
+/* ===== RSVP ===== */
+.rsvp-button {
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 36px;
+    border:2px solid #800000;
+    border-radius:40px;
+    text-decoration:none;
+    transition:.3s;
+}
+.rsvp-button:hover {
+    background:#800000;
+    color:#FFF8DC;
+}
+
+/* ===== СТАБИЛЬНЫЙ ТАЙМЕР (TABLE) ===== */
+#countdown-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: 'Cinzel', serif;
+    font-variant-numeric: tabular-nums lining-nums;
+    white-space: nowrap;
+}
+
+#countdown-table td {
+    text-align: center;
+    padding: 0 6px;
+}
+
+#countdown-table .values td {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#countdown-table .labels td {
+    font-size: 0.75em;
+    padding-top: 6px;
+}
+
+#countdown-table .days {
+    min-width: 3.8ch;
+}
+
+#countdown-table td:not(.days):not(.sep) {
+    min-width: 2.8ch;
+}
+
+#countdown-table .sep {
+    min-width: 1.2ch;
+    font-size: 3em;
+    font-weight: 700;
+}
+/* ===== ФУТЕР ===== */
+footer {
+    text-align:center;
+    padding:10px;
+    font-size:.9em;
+}
+/* ===== Unicode-звезды ✦ внутри блоков ===== */
+
+.poster {
+    position: relative;
+}
+
+/* контейнер со звездами */
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* сама звезда */
+.star {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    line-height: 1;
+    color: #800000;
+    opacity: 0.85;
+}
+
+/* символ */
+.star::before {
+    content: "✦";
+}
+
+/* позиции */
+.star.left {
+    left: 30px;
+}
+
+.star.right {
+    right: 30px;
+}
+
+/* адаптация под мобильные */
+@media (max-width: 768px) {
+    .star {
+        font-size: 20px;
+    }
+
+    .star.left {
+        left: 16px;
+    }
+
+    .star.right {
+        right: 16px;
+    }
