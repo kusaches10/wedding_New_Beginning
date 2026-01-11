@@ -423,11 +423,7 @@ footer {
         width: 1ch;
     }
 }
-@media (max-width: 768px) {
-    #countdown-table {
-        outline: 2px solid red;
-    }
-}
+
 .countdown-section {
     margin: 80px 0;
     text-align: center;
@@ -449,6 +445,7 @@ footer {
         margin: 0 auto;
     }
 }
+
 
 
 
