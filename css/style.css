@@ -423,6 +423,12 @@ footer {
         min-width: auto;
     }
 }
+@media (max-width: 480px) {
+    .poster h2 {
+        font-size: 1.6em;
+    }
+}
+
 
 
 
