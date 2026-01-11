@@ -388,5 +388,12 @@ footer {
         transform-origin: center;
     }
 }
+@media (max-width: 768px) {
+
+    #countdown-table td {
+        padding: 0 3px;
+    }
+}
+
 
 
