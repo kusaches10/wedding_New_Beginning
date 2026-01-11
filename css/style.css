@@ -398,6 +398,9 @@ footer {
     border: none;
     padding: 0;
 }
+.poster.countdown {
+    text-align: center;
+}
 
 
 
