@@ -5,7 +5,7 @@ html, body {
     background-color: #FFF8DC;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    font-size: 20px ;
+    font-size: 18px ;
 }
 
 /* ===== ЦВЕТ ТЕКСТА ===== */
@@ -395,11 +395,8 @@ footer {
         padding: 0 3px;
     }
 }
-@media (max-width: 768px) {
-    #countdown-table {
-        outline: 2px solid red;
-    }
-}
+
+
 
 
 
