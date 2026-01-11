@@ -385,6 +385,16 @@ footer {
 .countdown {
     text-align: center;
 }
+@media (max-width: 768px) {
+    .poster {
+        padding: 40px 20px;
+    }
+}
+#countdown-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
 
